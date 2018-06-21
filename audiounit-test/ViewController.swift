@@ -7,13 +7,20 @@
 //
 
 import Cocoa
+import CoreAudio
+import CoreAudioKit
+import AVFoundation
+import CoreAudioKit
+
 
 class ViewController: NSViewController {
+    
+    var captureSession = AudioCaptureSession()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
     }
 
     override var representedObject: Any? {
