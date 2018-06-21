@@ -56,7 +56,7 @@ class AudioCaptureSession: NSObject, AVCaptureAudioDataOutputSampleBufferDelegat
     func captureOutput(_ output: AVCaptureOutput,
                        didOutput sampleBuffer: CMSampleBuffer,
                        from connection: AVCaptureConnection) {
-        print(sampleBuffer)
+        print(CMSampleBufferGetDataBuffer(sampleBuffer));
         // print(sampleBuffer.dataBuffer) -- throws error
 
         
