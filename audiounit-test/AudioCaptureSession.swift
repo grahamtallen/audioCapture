@@ -8,6 +8,8 @@ import AVFoundation
 
 class AudioCaptureSession: NSObject, AVCaptureAudioDataOutputSampleBufferDelegate {
     
+    let outStream = OutputStream.init()
+    
     let settings = [
         AVFormatIDKey: kAudioFormatMPEG4AAC,
         AVNumberOfChannelsKey : 1,
@@ -56,10 +58,37 @@ class AudioCaptureSession: NSObject, AVCaptureAudioDataOutputSampleBufferDelegat
     func captureOutput(_ output: AVCaptureOutput,
                        didOutput sampleBuffer: CMSampleBuffer,
                        from connection: AVCaptureConnection) {
-        print(CMSampleBufferGetDataBuffer(sampleBuffer));
-        // print(sampleBuffer.dataBuffer) -- throws error
-
         
-        print("Audio data recieved")
+        let db = CMSampleBufferGetDataBuffer(sampleBuffer)
+        print("DATA BUFFFER ====", db)
+//        var totalLength:Int = 0
+//        var dataPointer: UnsafeMutablePointer<Int8>? = nil
+//        print("DATA Pointer ====", dataPointer)
+//        var dataPoinnnter = CMBlockBufferGetDataPointer(CMSampleBufferGetDataBuffer(sampleBuffer)!, 0, nil, &totalLength, &dataPointer)
+//        print("DATA Pointer ====", dataPointer)
+//        outStream.write(dataPointer, maxLength: 1000)
+//        print("Output stream ====", outStream)
+
+
+//        let dataBuffer = CMSampleBufferGetDataBuffer(sampleBuffer)
+        //        print(connection.inputPorts)
+//                print(connection.audioChannels)
+        
+        
+        
+        
+//        func inclientData (data: String) {
+//            print(data);
+//        }
+        
+//        let fs = AudioFileStreamOpen(sampleBuffer, _, _, _, _)
+        
+//        print("Number of Samples: ", CMSampleBufferGetOutputDuration(sampleBuffer));
+//        print("Sample Size: ", CMSampleBufferGetSampleSize(sampleBuffer, 0));
+        // print(sampleBuffer.dataBuffer) -- throws error
+//        let audioStream = AudioStreamBasicDescription.init();
+//        print(audioStream)
+        
+//        print("Audio data recieved")
     }
 }

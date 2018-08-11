@@ -1,0 +1,6 @@
+framework module Pods_audiounit_testUITests {
+  umbrella header "Pods-audiounit-testUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
